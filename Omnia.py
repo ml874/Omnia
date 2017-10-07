@@ -45,3 +45,6 @@ def query(input):
         result = next(result.results).text
         print result
         os.system(say + str(result))
+
+if __name__ == '__main__':
+    question()

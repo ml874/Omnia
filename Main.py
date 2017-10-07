@@ -1,36 +1,8 @@
 import os, pyaudio
-import time
-import TopNews
-import Weather
+import BasicFunctions
 import sys
 import TTS
 import Omnia
-
-say = 'say '
-
-
-# Good Morning
-def goodMorning():
-    os.system(say + "Good Morning, Maverick")
-
-
-# Provide Time
-def localtime():
-    localtime = time.asctime(time.localtime(time.time()))
-    localtime = say + "The time is now " + str(localtime)
-    os.system(localtime)
-
-
-# Provide Weather
-def weather():
-    city = Weather.geolocate()['city']
-    state = Weather.geolocate()['region_name']
-    condition = Weather.getweather(city)['text']
-    temp = Weather.getweather(city)['temp']
-    weather = say + \
-              " Here is the weather for" + city + ", " + state + ". It is " + condition + " with a temperature of " + \
-              temp + " degrees."
-    os.system(weather)
 
 
 # Provide Headlines
@@ -55,9 +27,9 @@ def askQuestion():
 
 
 if __name__ == '__main__':
-    goodMorning()
-    localtime()
-    # weather()
-    news()
+    basic = BasicFunctions.Basic()
+    basic.goodMorning()
+    basic.getweather('Ithaca, New York')
+    # news()
     # while True:
     #     askQuestion()

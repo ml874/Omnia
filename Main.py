@@ -28,8 +28,9 @@ def askQuestion():
 
 if __name__ == '__main__':
     basic = BasicFunctions.Basic()
-    basic.goodMorning()
-    basic.getweather('Ithaca, New York')
-    # news()
+    # basic.goodMorning()
+    # basic.localtime()
+    # basic.getweather('Ithaca, New York')
+    basic.topnews()
     # while True:
     #     askQuestion()

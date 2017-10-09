@@ -4,7 +4,7 @@ import os
 from weather import Weather
 import requests
 import json
-import yweather
+from newsapi.articles import Articles
 
 # GLOBAL VARIABLES
 say = 'say '
@@ -22,16 +22,16 @@ class Basic:
         os.system(localtime)
 
     # Weather
-    def geolocate(self):
-        req = requests.get('http://freegeoip.net/json/')
-        location = json.loads(req.text)
-        req.close()
-        location_city = location['city']
-        # location_state = location['region_name']
-        # location_country = location['country_name']
-        # location_zip = location['zip_code']
-        return location
-
+    # def geolocate(self):
+    #     req = requests.get('http://freegeoip.net/json/')
+    #     location = json.loads(req.text)
+    #     req.close()
+    #     location_city = location['city']
+    #     # location_state = location['region_name']
+    #     # location_country = location['country_name']
+    #     # location_zip = location['zip_code']
+    #     return location
+    # Return Weather
     def getweather(self, location):
         weather = Weather()
         data = weather.lookup_by_location(location)
@@ -42,3 +42,13 @@ class Basic:
                   " Here is the weather for" + location + ". It is " + cond + " with a temperature of " + \
                   temp + " degrees."
         os.system(weather)
+
+    # Return News By Category
+    def topnews(self):
+        a = Articles(API_KEY='ffdb92e0d2a64cf383855a15905e498a')
+        x = a.get(source="the-wall-street-journal")
+        articles = x['articles']
+        descriptions = []
+        for x in articles:
+            descriptions.append(x['description'].replace(u"\u2018", "'").replace(u"\u2019", "'"))
+        os.system(say + str(descriptions))

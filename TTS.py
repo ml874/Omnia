@@ -36,5 +36,6 @@ def query():
         print("Google error; {0}".format(e))
         return "Google error; {0}".format(e)
 
+
 if __name__ == '__main__':
     test()

@@ -1,14 +1,17 @@
 # Basic Functions. Good Morning, Weather, News
 import time
+import speech_recognition as sr
 import os
 from weather import Weather
 import requests
 import loginkeys
 from newsapi.articles import Articles
+from VoiceInput import VoiceInput
+
 
 # GLOBAL VARIABLES
 say = 'say '
-
+voiceinput = VoiceInput()
 
 class Basic:
     # Good Morning
@@ -38,17 +41,33 @@ class Basic:
         condition = data.condition()
         cond = condition['text']
         temp = condition['temp']
-        weather = say + \
-                  " Here is the weather for" + location + ". It is " + cond + " with a temperature of " + \
+        weather = say + " Here is the weather for" + location + ". It is " + cond + " with a temperature of " + \
                   temp + " degrees."
         os.system(weather)
 
     # Return News By Category
     def topnews(self):
-        a = Articles(API_KEY=loginkeys.NEWSAPI_KEY)
-        x = a.get(source="the-wall-street-journal")
-        articles = x['articles']
-        descriptions = []
-        for x in articles:
-            descriptions.append(x['description'].replace(u"\u2018", "'").replace(u"\u2019", "'"))
-        os.system(say + str(descriptions))
+
+        while True:
+            os.system(say + 'What news would you like today?')
+            sourcenews = voiceinput.voiceinput()
+            os.system(say + "Pulling up news from : " + sourcenews)
+            sourcenews = '-'.join(sourcenews.split())
+            a = Articles(API_KEY=loginkeys.NEWSAPI_KEY)
+            try:
+                x = a.get(source=sourcenews)
+                articles = x['articles']
+                descriptions = []
+
+                for x in articles:
+                    descriptions.append(str(x['description']))
+
+                    # descriptions.append(x['description'].replace(u"\u2018", "'").replace(u"\u2019", "'"))
+                os.system(say + "Here are some top news headlines:")
+                os.system(say + str(descriptions))
+                break
+            except:
+                os.system(say + 'Sorry, server was not responding or you said an invalid choice. Please try again.')
+                continue
+
+

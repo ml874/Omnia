@@ -3,7 +3,7 @@ import time
 import os
 from weather import Weather
 import requests
-import json
+import loginkeys
 from newsapi.articles import Articles
 
 # GLOBAL VARIABLES
@@ -45,7 +45,7 @@ class Basic:
 
     # Return News By Category
     def topnews(self):
-        a = Articles(API_KEY='ffdb92e0d2a64cf383855a15905e498a')
+        a = Articles(API_KEY=loginkeys.NEWSAPI_KEY)
         x = a.get(source="the-wall-street-journal")
         articles = x['articles']
         descriptions = []

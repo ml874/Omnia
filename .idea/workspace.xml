@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa1817b0-0abd-4667-a199-c2d3fc39dfe5" name="Default" comment="" />
+    <list default="true" id="fa1817b0-0abd-4667-a199-c2d3fc39dfe5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BasicFunctions.py" afterPath="$PROJECT_DIR$/BasicFunctions.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Omnia.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Omnia.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Omnia.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -46,14 +48,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicFunctions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BasicFunctions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BasicFunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="63" />
+            <state relative-caret-position="570">
+              <caret line="47" column="50" lean-forward="false" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
               <folding>
                 <element signature="e#47#58#0" expanded="true" />
-                <element signature="e#508#517#0" expanded="false" />
+                <element signature="e#513#522#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,8 +86,8 @@
       <file leaf-file-name="loginkeys.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginkeys.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+            <state relative-caret-position="15">
+              <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -115,10 +117,10 @@
         <option value="$PROJECT_DIR$/TTS.py" />
         <option value="$PROJECT_DIR$/Omnia.py" />
         <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/BasicFunctions.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Loginkeys.py" />
         <option value="$PROJECT_DIR$/loginkeys.py" />
+        <option value="$PROJECT_DIR$/BasicFunctions.py" />
       </list>
     </option>
   </component>
@@ -454,17 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BasicFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="63" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-            <element signature="e#508#517#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -502,20 +493,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginkeys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Omnia.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="38" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginkeys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BasicFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="47" column="50" lean-forward="false" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+          <folding>
+            <element signature="e#47#58#0" expanded="true" />
+            <element signature="e#513#522#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -46,5 +46,6 @@ def query(input):
         print result
         os.system(say + str(result))
 
+
 if __name__ == '__main__':
     question()

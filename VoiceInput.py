@@ -11,6 +11,7 @@ class VoiceInput:
         r = sr.Recognizer()
         while True:
             with sr.Microphone() as source:
+                print 'Listening'
                 audio = r.listen(source)
             try:
                 # print "Did you say: " + r.recognize_google(audio)

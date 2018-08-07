@@ -1,4 +1,4 @@
-# Basic Functions. Good Morning, Weather, News
+
 import time
 import speech_recognition as sr
 import os
@@ -7,6 +7,11 @@ import requests
 import loginkeys
 from newsapi.articles import Articles
 from VoiceInput import VoiceInput
+
+##### Basic Functions #####
+    # Good Morning
+    # Weather
+    # News
 
 
 # GLOBAL VARIABLES

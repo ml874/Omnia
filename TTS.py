@@ -1,19 +1,19 @@
 import speech_recognition as sr
 import os
 
+# Text To Speech (TTS) Module
 
 say = 'say '
 r = sr.Recognizer()
 
-
 def test():
     while True:
         with sr.Microphone() as source:
-            print "Say Something!"
+            print("Say Something!")
             audio = r.listen(source)
         try:
             os.system(say + "Did you say : " + str(r.recognize_google(audio)))
-            print "Did you say: " + r.recognize_google(audio)
+            print("Did you say: " + r.recognize_google(audio))
             return "Did you say: " + r.recognize_google(audio)
         except sr.UnknownValueError:
             print("Google could not understand audio")
@@ -27,7 +27,7 @@ def query():
     with sr.Microphone() as source:
         audio = r.listen(source)
     try:
-        print r.recognize_google(audio)
+        print(r.recognize_google(audio))
         return r.recognize_google(audio)
     except sr.UnknownValueError:
         print("Google could not understand audio")

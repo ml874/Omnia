@@ -16,24 +16,24 @@ def question():
             client = wolframalpha.Client(app_id)
             result = client.query(question)
             result = next(result.results).text
-            print result
+            print(result)
             os.system(say + str(result))
         except:
             # Wikipedia
-            print wikipedia.summary(question, sentences=1)
+            print(wikipedia.summary(question, sentences=1))
             result = wikipedia.summary(question, sentences=1)
-            print type(result)
+            print(type(result))
             result = str(result)
             os.system(say + result)
 
 
+# Queries Wikipedia or Wolfram Alpha
 def query(input):
-
     try:
         # Wikipedia
-        print wikipedia.summary(input, sentences=1)
+        print(wikipedia.summary(input, sentences=1))
         result = wikipedia.summary(input, sentences=1)
-        print type(result)
+        print(type(result))
         result = str(result)
         os.system(say + result)
     except:
@@ -43,7 +43,7 @@ def query(input):
         client = wolframalpha.Client(app_id)
         result = client.query(input)
         result = next(result.results).text
-        print result
+        print(result)
         os.system(say + str(result))
 
 

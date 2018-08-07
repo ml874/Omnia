@@ -8,17 +8,23 @@ say = 'say '
 voiceinput = VoiceInput()
 
 kernel = aiml.Kernel()
-# kernel.learn("/Users/maverick/Documents/PycharmProjects/Omnia/AIML Files/std-startup.xml")
+# kernel.learn("aiml/std-startup.xml")
 # kernel.respond("load aiml b")
 
-if os.path.isfile("/Users/maverick/Documents/PycharmProjects/Omnia/AIML Files/brain.brn"):
-    kernel.bootstrap(brainFile="/Users/maverick/Documents/PycharmProjects/Omnia/AIML Files/brain.brn")
+# print(kernel)
+
+if os.path.isfile("aiml/brain.brn"):
+    kernel.bootstrap(brainFile="aiml/brain.brn")
 else:
-    kernel.bootstrap(learnFiles="std-startup.xml", commands="load aiml b")
-    kernel.saveBrain("/Users/maverick/Documents/PycharmProjects/Omnia/AIML Files/brain.brn")
+    kernel.bootstrap(learnFiles="aiml/std-startup.xml", commands="load aiml b")
+    kernel.saveBrain("aiml/brain.brn")
 
 while True:
-    # respond = kernel.respond(str(voiceinput.voiceinput()))
-    respond = kernel.respond(raw_input("Type Message: "))
-    print respond
-    # os.system('say ' + respond)
+	# print(kernel.respond(input("Enter your message >> ")))
+
+	voice_input = str(voiceinput.voiceinput(audio=True))
+	response = kernel.respond(voice_input)
+	# input_text = input("Type Message: ")
+	# response = kernel.respond(input_text)
+	print(response)
+	os.system('say ' + response)

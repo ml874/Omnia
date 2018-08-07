@@ -1,0 +1,447 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"X",
+				"X_val"
+			],
+			[
+				"ar",
+				"articles"
+			],
+			[
+				"best",
+				"best_state"
+			],
+			[
+				"tra",
+				"train_batches"
+			],
+			[
+				"loss",
+				"losslist"
+			],
+			[
+				"train",
+				"train_loss"
+			],
+			[
+				"val",
+				"valid_acc"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "\nimport time\nimport speech_recognition as sr\nimport os\nfrom weather import Weather\nimport requests\nimport loginkeys\nfrom newsapi.articles import Articles\nfrom VoiceInput import VoiceInput\n\n##### Basic Functions #####\n    # Good Morning\n    # Weather\n    # News\n\n\n# GLOBAL VARIABLES\nsay = 'say '\nvoiceinput = VoiceInput()\n\nclass Basic:\n    # Good Morning\n    def goodMorning(self):\n        os.system(say + \"Good Morning, Maverick\")\n\n    # Local Time\n    def localtime(self):\n        localtime = time.asctime(time.localtime(time.time()))\n        localtime = say + \"The time is now \" + str(localtime)\n        os.system(localtime)\n\n    # Weather\n    # def geolocate(self):\n    #     req = requests.get('http://freegeoip.net/json/')\n    #     location = json.loads(req.text)\n    #     req.close()\n    #     location_city = location['city']\n    #     # location_state = location['region_name']\n    #     # location_country = location['country_name']\n    #     # location_zip = location['zip_code']\n    #     return location\n    # Return Weather\n    def getweather(self, location):\n        weather = Weather()\n        data = weather.lookup_by_location(location)\n        condition = data.condition()\n        cond = condition['text']\n        temp = condition['temp']\n        weather = say + \" Here is the weather for\" + location + \". It is \" + cond + \" with a temperature of \" + \\\n                  temp + \" degrees.\"\n        os.system(weather)\n\n    # Return News By Category\n    def topnews(self):\n\n        while True:\n            os.system(say + 'What news would you like today?')\n            sourcenews = voiceinput.voiceinput()\n            os.system(say + \"Pulling up news from : \" + sourcenews)\n            sourcenews = '-'.join(sourcenews.split())\n            a = Articles(API_KEY=loginkeys.NEWSAPI_KEY)\n            try:\n                x = a.get(source=sourcenews)\n                articles = x['articles']\n                descriptions = []\n\n                for x in articles:\n                    descriptions.append(str(x['description']))\n\n                    # descriptions.append(x['description'].replace(u\"\\u2018\", \"'\").replace(u\"\\u2019\", \"'\"))\n                os.system(say + \"Here are some top news headlines:\")\n                os.system(say + str(descriptions))\n                break\n            except:\n                os.system(say + 'Sorry, server was not responding or you said an invalid choice. Please try again.')\n                continue\n\n\n",
+			"file": "BasicFunctions.py",
+			"file_size": 2440,
+			"file_write_time": 131749382226716959,
+			"settings":
+			{
+				"buffer_size": 2452,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "VoiceInput.py",
+			"settings":
+			{
+				"buffer_size": 801,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "TTS.py",
+			"settings":
+			{
+				"buffer_size": 1221,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Omnia.py",
+			"settings":
+			{
+				"buffer_size": 1309,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Main.py",
+			"settings":
+			{
+				"buffer_size": 386,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"About"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 131.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/maverick/Downloads/latexsheet.tex",
+		"/Users/maverick/README.md",
+		"/Users/maverick/Documents/Machine Learning/Competitions/Point72/backtest.py",
+		"/Users/maverick/Documents/Machine Learning/Competitions/Point72/sentiment/fetch_news.py",
+		"/Users/maverick/Documents/Machine Learning/Interviews/EV_game.py",
+		"/Users/maverick/Documents/Machine Learning/Interviews/README.txt",
+		"/Users/maverick/Documents/Machine Learning/Competitions/Point72/sentiment/tiingo_news_cron.py",
+		"/Users/maverick/Documents/Machine Learning/Competitions/Point72/sentiment/ticker_db.py",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/sentiment/twitter_sentiment.py",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/sentiment/live_twitter_plotting.py",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/sentiment/sentiment_training.py",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/sentiment/live_twitter_sentiment.py",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/sentiment/ticker_db.py",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/sentiment/tiingo_sentiment.py",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/live_twitter_plotting.py",
+		"/Users/maverick/Documents/PycharmProjects/Twitter/Twython.py",
+		"/Users/maverick/Documents/PycharmProjects/Twitter/FollowingTwitterAccounts.py",
+		"/Users/maverick/Documents/PycharmProjects/Twitter/Streaming.py",
+		"/Users/maverick/Documents/PycharmProjects/CryptArb/TriangleCalculator.py",
+		"/Users/maverick/Desktop/Machine Learning/Notebook Of Things I Don't Know About/README.md",
+		"/anaconda3/etc/jupyter/nbconfig/notebook.json",
+		"/Users/maverick/Documents/PycharmProjects/CryptArb/Exchange.py",
+		"/Users/maverick/Downloads/A.txt",
+		"/Users/maverick/Desktop/Machine Learning/Competitions/Point72/8K_txt/ZQK.txt",
+		"/Users/maverick/Downloads/HW-5-Dynamic-Program.md",
+		"/Users/maverick/Downloads/HW1.m",
+		"/Users/maverick/Documents/PycharmProjects/CryptArb/Kraken.py",
+		"/Users/maverick/Downloads/Cartpole.py",
+		"/Users/maverick/Desktop/Halite2/kamikaze.py",
+		"/Users/maverick/Downloads/tic_tac_toe.py",
+		"/Users/maverick/Documents/HW/CS 4740/proj4_nlm/pytorch/dan_classifier.py",
+		"/Users/maverick/Documents/HW/CS 4740/proj4_nlm/data/train.txt",
+		"/Users/maverick/Documents/HW/CS 4740/proj4_nlm/processed/train_ix.pkl",
+		"/Users/maverick/Downloads/Autoencoder Example",
+		"/Users/maverick/Downloads/Framework (1).java"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "BasicFunctions.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "VoiceInput.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556,
+								556
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "TTS.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1221,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								530,
+								530
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Omnia.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 225.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
